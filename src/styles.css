@@ -1,1 +1,94 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/ng2-slim-loading-bar/style.css";
+@import "./css/reset.css";
+@import "./css/slick.css";
+@import "./css/common.css";
+@import "~bootstrap/dist/css/bootstrap.css";
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+body{font-family: 'noto',"MalgunGothic","맑은 고딕","돋움","tahoma","sans-serif";}
+body,a,[type=text], [type=password], [type=file], [type=email], [type=number], [type=tel],select,h1, h2, h3, h4, h5, h6, pre,textarea{
+    font-family:noto,"MalgunGothic","맑은 고딕","돋움","tahoma","sans-serif"; font-size:13px; line-height:1.4; color:#333;}
+
+    /*-- font --*/
+/*NotoSans*/
+@font-face {
+    font-family: 'noto';
+    font-style: normal;
+    font-weight: 100;
+    src: url(css/font/NotoSans-Thin.eot);
+    src: url(css/font/NotoSans-Thin.eot?#iefix) format('embedded-opentype'),
+    url(css/font/NotoSans-Thin.woff2) format('woff2'),
+    url(css/font/NotoSans-Thin.woff) format('woff');
+    /* url(css/font/NotoSans-Thin.otf) format('opentype'); */
+}
+
+@font-face {
+    font-family: 'noto';
+    font-style: normal;
+    font-weight: 200;
+    src: url(css/font/NotoSans-Light.eot);
+    src: url(css/font/NotoSans-Light.eot?#iefix) format('embedded-opentype'),
+    url(css/font/NotoSans-Light.woff2) format('woff2'),
+    url(css/font/NotoSans-Light.woff) format('woff');
+    /* url(font/NotoSans-Light.otf) format('opentype'); */
+}
+
+
+@font-face {
+    font-family: 'noto';
+    font-style: normal;
+    font-weight: 300;
+    src: url(css/font/NotoSans-DemiLight.eot);
+    src: url(css/font/NotoSans-DemiLight.eot?#iefix) format('embedded-opentype'),
+    url(css/font/NotoSans-DemiLight.woff2) format('woff2'),
+    url(css/font/NotoSans-DemiLight.woff) format('woff');
+    /* url(font/NotoSans-DemiLight.otf) format('opentype'); */
+}
+
+
+@font-face {
+    font-family: 'noto';
+    font-style: normal;
+    font-weight: 400;
+    src: url(css/font/NotoSans-Regular.eot);
+    src: url(css/font/NotoSans-Regular.eot?#iefix) format('embedded-opentype'),
+    url(css/font/NotoSans-Regular.woff2) format('woff2'),
+    url(css/font/NotoSans-Regular.woff) format('woff');
+    /* url(font/NotoSans-Regular.otf) format('opentype'); */
+}
+
+
+@font-face {
+    font-family: 'noto';
+    font-style: normal;
+    font-weight: 500;
+    src: url(css/font/NotoSans-Medium.eot);
+    src: url(css/font/NotoSans-Medium.eot?#iefix) format('embedded-opentype'),
+    url(css/font/NotoSans-Medium.woff2) format('woff2'),
+    url(css/font/NotoSans-Medium.woff) format('woff');
+    /* url(font/NotoSans-Medium.otf) format('opentype'); */
+}
+
+
+@font-face {
+    font-family: 'noto';
+    font-style: normal;
+    font-weight: 600;
+    src: url(css/font/NotoSans-Bold.eot);
+    src: url(css/font/NotoSans-Bold.eot?#iefix) format('embedded-opentype'),
+    url(css/font/NotoSans-Bold.woff2) format('woff2'),
+    url(css/font/NotoSans-Bold.woff) format('woff');
+    /* url(font/NotoSans-Bold.otf) format('opentype'); */
+}
+
+@font-face {
+    font-family: 'noto';
+    font-style: normal;
+    font-weight: 700;
+    src: url(css/font/NotoSans-Black.eot);
+    src: url(css/font/NotoSans-Black.eot?#iefix) format('embedded-opentype'),
+    url(css/font/NotoSans-Black.woff2) format('woff2'),
+    url(css/font/NotoSans-Black.woff) format('woff');
+    /* url(font/NotoSans-Black.otf) format('opentype'); */
+}

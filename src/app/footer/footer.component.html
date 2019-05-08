@@ -1,0 +1,45 @@
+<!-- footer -->
+<div class="footer_bg" *ngIf="router.url !== '/popup'">
+	<div class="footer clfx">
+		<div class="right_area">
+			<div class="tel">82-2-6295-0211</div>
+			<span class="title">CUSTOMER CENTER</span>
+			<p class="txt_3" [innerHTML]="'업무시간' | translate">
+				<!-- 오전09시~오후06시(점심시간:오후12시~1시)<br />토요일 및 공휴일 휴무 -->
+			</p>
+			<!-- <div class="sns clfx">
+				<ul class="clfx">
+					<li><a href="#"><img src="../assets/img/sns_1.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="../assets/img/sns_2.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="../assets/img/sns_3.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="../assets/img/sns_4.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="../assets/img/sns_5.jpg" alt="" /></a></li>
+					<li><a href="#"><img src="../assets/img/sns_6.jpg" alt="" /></a></li>
+				</ul>
+			</div> -->
+		</div>
+
+		<div class="left_area">
+			<div class="menu">
+				<ul class="clfx">
+					<li><a href="#">{{'고객문의' | translate}}</a></li>
+					<li><a href="#">{{'제휴문의' | translate}}</a></li>
+					<li><a href="#">{{'이용약관' | translate}}</a></li>
+					<li><a href="#">{{'개인정보처리방침' | translate}}</a></li>
+				</ul>
+			</div>
+			<address>{{'주소' | translate}} : {{'회사주소' | translate}}</address>
+			<ul class="txt_1 clfx">
+				<li>{{'대표메일' | translate}} : sales@barumnet.com</li>
+				<li>{{'본사전화' | translate}} : 82-2-6295-0211</li>
+			</ul>
+			<br/>
+			<p class="txt_2" [innerHTML]="'introduce04' | translate">
+			</p>
+			<p class="copyright">
+				Copyright © 2018 barumnet. All Rights Reserved. 
+			</p>
+		</div>
+	</div>
+</div>
+<!-- //footer -->

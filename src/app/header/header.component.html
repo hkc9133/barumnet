@@ -1,0 +1,108 @@
+<!-- util -->
+<!-- <div [ngClass]="{'hide' : router.url === '/popup'}"> -->
+<div *ngIf="router.url !== '/popup'" >
+<div class="util_bg">
+	<div class="util clfx">
+		<a href="mailto:sales@barumnet.com" class="mail">sales@barumnet.com</a>
+		<div class="menu">
+			<ul class="clfx">
+				<ng-template [ngIf]="loginStatus">
+					<li>
+						<a  class="popup_mgmt" data-toggle="modal" data-target="#myModal" (click)="showModal()">
+								팝업 관리
+						</a>
+					</li>
+				</ng-template>
+				<!-- <li><a href="#" class="arrow">KOR</a></li> -->
+				<li>
+					<select [(ngModel)]='selectLang' (change)="onChangeLang($event)" class='form-control'>
+							<option value="ko" selected>KOR</option>
+							<option value="en">ENG</option>
+							<option value="jp">JPN</option>
+							<option value="cn">CHN</option>
+					</select>
+				</li>
+        		<li><a href="#section-4">CONTACT US</a></li>
+				<li>
+					<ng-template [ngIf]="loginStatus" [ngIfElse]="loggedOut">
+						<a class="logoutBtn" (click)="logout()">로그아웃</a>
+					</ng-template>
+					<!-- <ng-template #loggedOut>
+						<a routerLink="signup">로그인</a>
+					</ng-template> -->
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- //util -->
+
+<!-- header -->
+<div class="header clfx">
+	<div class="logo"><a href="index.html"><img src="../assets/img/logo.png" alt="BARUM NET" /></a></div>
+
+	<div id="burger-container">
+		<div id="burger">
+			<span> &nbsp;</span>
+			<span> &nbsp;</span>
+			<span> &nbsp;</span>
+			<span> &nbsp;</span>
+		</div>
+	</div>
+
+	<div class="gnb navigation-menu">
+		<ul class="clfx">
+			<li><a href="index.html"><img src="../assets/img/home.png" alt="home" /></a></li>
+			<li><a href="#section-1">{{'Aboutus' | translate}}</a></li>
+			<li><a href="#section-2">{{'Inventory' | translate}}</a></li>
+			<li><a href="#section-3">{{'제품소개' | translate}}</a></li>
+			<li><a href="#section-4">{{'오시는길' | translate}}</a></li>
+			<li><a href="#section-5">{{'견적문의' | translate}}</a></li>
+		</ul>
+	</div>
+</div>
+<!-- //header -->
+</div>
+
+
+<!-- The Modal -->
+<ng-template [ngIf]="loginStatus">
+<div class="modal fade" id="myModal">
+		<div class="modal-dialog">
+		  <div class="modal-content">
+	  
+			<!-- Modal Header -->
+			<div class="modal-header">
+			  <h4 class="modal-title">팝업 관리</h4>
+			  <button type="button" class="close" (click)="hideModal()">&times;</button>
+			</div>
+	  
+			<!-- Modal body -->
+			<div class="modal-body">
+			<div id="popupPreviewBox">
+				<img [src]="uploadUrl" id="popupPreview" alt="팝업 없음" style="max-width: 100%; height: auto;">
+			</div>
+				<div class="input-group upload_box">
+					<div class="">
+						<input class="button" type="file" name="file" ng2FileSelect [uploader]="uploader" (change)="onFileChange($event)"/>
+						<button type="button" class="btn btn-success btn-sm" (click)="uploader.uploadAll(); loaderService.show();" [disabled]="!uploader.getNotUploadedItems().length" >Upload</button>
+					</div>
+				</div>
+				<div class="input-group-text">
+					<label for="popupChecked">팝업 사용 여부</label>
+					<input id="popupChecked" type="checkbox" [checked]="popupChecked" (change)="checkBoxChange($event)">
+				</div>
+			</div>
+	  
+			<!-- Modal footer -->
+			<div class="modal-footer">
+			  <button type="button" class="btn btn-primary" (click)="sendModal()" >Send</button>
+			  <button type="button" class="btn btn-default" (click)="hideModal()">Close</button>
+	  
+			  <!-- this button is hidden, used to close from typescript -->
+			  <button type="button" id="close-modal" data-dismiss="modal" style="display: none">Close</button>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</ng-template>

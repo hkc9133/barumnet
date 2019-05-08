@@ -1,0 +1,353 @@
+<!-- main_visual -->
+<div class="main_visual">
+	<div class="slides single-item">
+		<div style="background:url(../assets/img/main_visual_1.jpg) no-repeat center center; background-size:cover;" class="slide">
+			<div class="main_vs_txt">
+				<h1 [innerHTML]="'introduce01' | translate">
+					<!-- <span>Barumnet provides IT solution</span>
+					㈜바름넷은 IT 장비 서비스를 제공하는 글로벌 기업입니다. -->
+				</h1>
+				<p [innerHTML]="'introduce02' | translate">
+					<!-- 1000개의 글로벌 유통망을 통해 최고의 품질과 가격으로 고객 만족을 목표로 하는 바른 기업입니다. -->
+				</p>
+			</div>
+		</div>
+
+		<div style="background:url(../assets/img/main_visual_2.jpg) no-repeat center center; background-size:cover;" class="slide">
+			<!-- <div class="main_vs_txt2">
+				<h1>
+					<span>Barumnet provides IT solution</span>
+					㈜바름넷은 IT 장비 서비스를 제공하는 글로벌 기업입니다.<br/>
+				</h1>
+				<p>Our values - </p>
+				<p class="main_vs_txt2_content">
+						Trust 신뢰  &nbsp;
+				</p>
+				<p class="main_vs_txt2_content">
+						Passion 열정  &nbsp;
+				</p>
+				<p class="main_vs_txt2_content">
+						Efficiency 효율  &nbsp;
+				</p>
+				<p class="main_vs_txt2_content">
+						Teamwork 팀워크 &nbsp;&nbsp;&nbsp;
+				</p>
+				<p class="main_vs_txt2_content">
+						고객가치 만족 실현
+				</p>
+			</div> -->
+		</div>
+	</div>
+</div>
+<!-- //main_visual -->
+
+<!-- main_container -->
+<div class="main_container">
+	<!-- about -->
+	<div class="about" id="section-1">
+		<div class="main_cont">
+			<h1 class="main_title"><img src="../assets/img/title_1.png" alt=" About us" /></h1>
+			<p class="top_txt" [innerHTML]="'introduce03' | translate">
+				<!-- ㈜바름넷은 10년 이상의 경험치를 바탕으로 중국, 일본 및 전세계 소싱네트워크망을 보유하고 있어 <br />가장 경쟁력 있는 금액과 빠른 납기로 100% 고객 만족을 목표로 하는 기업입니다.  -->
+			</p>
+			<ul class="clfx">
+				<li>
+						<div class="img_area"><img src="../assets/img/about_img_3.jpg" alt="" /></div>
+						<div class="txt_area">
+							<h2 style="font-size: 35px">{{ 'about_us_01' | translate }}</h2>
+							<p [innerHTML]="'about_us_01_content' | translate">
+							</p>
+						</div>
+				</li>
+				<li>
+					<div class="img_area"><img src="../assets/img/about_img_1.jpg" alt="" /></div>
+					<div class="txt_area">
+						<h2 [innerHTML]="'about_us_02' | translate"></h2>
+						<p>
+							Cisco, Juniper, HP, Lenovo, Netapp, EMC, Fujitsu
+						</p>
+					</div>
+				</li>
+				<li>
+					<div class="img_area"><img src="../assets/img/about_img_2.jpg" alt="" /></div>
+					<div class="txt_area">
+						<h2 [innerHTML]="'about_us_03' | translate"></h2>
+						<p [innerHTML]="'about_us_03_content' | translate"> 
+								
+						</p>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- //about -->
+
+	<!-- inventory -->
+	<div class="inventory" id="section-2">
+		<div class="main_cont">
+			<h1 class="main_title"><img src="../assets/img/title_2.png" alt=" INVENTORY" /></h1>
+			<p class="top_txt">
+				<!-- {{ 'inventory_content' | translate }} -->
+			</p>
+			<table>
+				<colgroup>
+					<col style="width:6.22%;" />
+					<!-- <col style="width:9.17%;" /> -->
+					<col style="width:7.73%;" />
+					<col style="width:15.15%;" />
+					<col />
+					<!-- <col style="width:7.97%;" /> -->
+					<col style="width:7.17%;" />
+					<col style="width:5.98%;" />
+					<col style="width:12.36%;" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col">No.</th>
+						<th scope="col">{{'제조사명' | translate}}</th>
+						<th scope="col">{{'파트넘버/모델명/제품명' | translate}}</th>
+						<th scope="col">{{'제품설명' | translate}}</th>
+						<th scope="col">{{'수량' | translate}}</th>
+						<th scope="col">{{'상태' | translate}}</th>
+						<th scope="col">{{'등록일시' | translate}}</th>
+					</tr>
+				</thead>
+				<tbody>
+            <tr *ngFor="let item of pagedItems">
+              <td>
+                {{item.idx}}
+              </td>
+              <td>
+                {{item.mfg_company}}
+              </td>
+              <td>
+                {{item.product_name}}
+              </td>
+              <td>
+                  {{item.product_info}}
+                </td>
+              <td>
+                {{item.product_quantity}}
+              </td>
+              <td>
+								{{item.product_status | translate}}
+              </td>
+              <td>
+                {{item.reg_date | date: 'yyyy-MM-dd'}}
+              </td>
+            </tr>
+          </tbody>
+			</table>
+
+			<div class="btn_area">
+				<a href="#" id="inven_btn" routerLink="inventory" class="basic-btn01 btn-blue-bg">View All Inventory</a>
+			</div>
+		</div>
+	</div>
+	<!-- //inventory -->
+
+	<!-- product -->
+	<div class="product" id="section-3">
+		<div class="main_cont">
+			<h1 class="main_title"><img src="../assets/img/title_3.jpg" alt=" PRODUCT" /></h1>
+			<div class="main_banner"><img src="../assets/img/main_banner.jpg" alt="" /></div>
+
+			<div class="product_list">
+				<ul class="clfx">
+					<li>
+						<!-- <span class="time">2019-03-04 09:53:24 </span> -->
+						<div class="img_area"><div class="inner"><img src="../assets/img/product01.jpg" alt="" /></div></div>
+						<div class="txt_area">
+							<h2>647650-071 (USED)</h2>
+							<p>
+								8GB pc3L-10600R
+							</p>
+							<!-- <span class="price"><strong>W</strong> 7,500,000</span> -->
+							<div class="btn_area"><a routerLink="inventory">MORE VIEW</a></div>
+						</div>
+					</li>
+					<li>
+						<!-- <span class="time">2019-03-04 09:53:24 </span> -->
+						<div class="img_area"><div class="inner"><img src="../assets/img/product02.jpg" alt="" /></div></div>
+						<div class="txt_area">
+							<h2>GLC-SX-MMD (NEW)</h2>
+							<p>
+								
+							</p>
+							<!-- <span class="price"><strong>W</strong> 7,500,000</span> -->
+							<div class="btn_area"><a routerLink="inventory">MORE VIEW</a></div>
+						</div>
+						
+					</li>
+					<li>
+						<!-- <span class="time">2019-03-04 09:53:24 </span> -->
+						<div class="img_area"><div class="inner"><img src="../assets/img/product03.jpg" alt="" /></div></div>
+						<div class="txt_area">
+							<h2>WS-C2960X-24TS-L (NEW)</h2>
+							<p>
+								24 Port Managed Gigabit Ethernet Switch<br />({{'해외직수입' | translate}})
+							</p>
+							<!-- <span class="price"><strong>W</strong> 7,500,000</span> -->
+							<div class="btn_area"><a routerLink="inventory">MORE VIEW</a></div>
+						</div>
+					</li>
+				</ul>
+			</div>
+			<div class="btn_area">
+				<a routerLink="inventory" class="basic-btn01 btn-blue-bg">More Product</a>
+			</div>
+		</div>
+	</div>
+	<!-- //product -->
+
+	<!-- contact -->
+	<div class="contact" id="section-4">
+		<div class="main_cont">
+			<h1 class="main_title"><img src="../assets/img/title_4.jpg" alt=" contact us" /></h1>
+			<p class="top_txt">
+				{{'contact_us_content' | translate}}
+			</p>
+
+			<ul class="location clfx">
+				<li class="icon_1">{{'회사주소' | translate}}</li>
+				<li class="icon_2">{{'대표번호' | translate}}{{'대표전화번호' | translate}}</li>
+				<li class="icon_3">{{'교통이용' | translate}}</li>
+			</ul>
+			<ul class="email_info clfx">
+					<li class="icon_1" ><a href="mailto:sales@barumnet.com">{{'국내' | translate}} – sales@barumnet.com</a></li>
+					<li class="icon_2"><a href="mailto:qihui0626@barumnet.com">{{'중국' | translate}} – qihui0626@barumnet.com</a></li>
+					<li class="icon_3"><a href="mailto:twoos@barumnet.com">{{'일본' | translate}} – twoos@barumnet.com</a></li>
+					<li class="icon_4"><a href="mailto:kaycee@barumnet.com">{{'해외' | translate}} - kaycee@barumnet.com</a></li>
+			</ul>
+			<div class="map_area">
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d12665.405156835135!2d126.87429048244167!3d37.47603582703692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357b61e40baa8b11%3A0x3c9baa80aab7824f!2z7ISc7Jq47Yq567OE7IucIOq4iOyynOq1rCDqsIDsgrDrj5kg6rCA7IKw65SU7KeA7YS4MeuhnA!5e0!3m2!1sko!2skr!4v1557222063685!5m2!1sko!2skr"frameborder="0" style="border:0" allowfullscreen></iframe>
+			</div>
+		</div>
+	</div>
+	<!-- contact -->
+
+	<!-- 견적의뢰 -->
+	<div class="request" id="section-5">
+    <form [formGroup]="emailForm" (ngSubmit)="onSubmit()">
+		<div class="main_cont">
+			<h1 class="main_title">{{'견적문의' | translate}}</h1>
+			<p class="top_txt">
+					{{'견적문의_content' | translate}}
+      </p>
+
+      <!-- <div *ngIf="emailForm.controls['name'].invalid && (emailForm.controls['name'].dirty || emailForm.controls['name'].touched)" class="alert alert-danger">
+          <p *ngIf="emailForm.controls['name'].errors.required">
+          Name is required.
+          </p>
+      </div> -->
+
+			<div class="request_list">
+				<ul class="clfx">
+					<li class="w_50">
+						<label for="request_name">{{'이름/업체명' | translate}}<strong class="necessary">*</strong></label>
+            <input type="text" class="form-control" placeholder="{{'이름 / 업체명을 입력하세요.' | translate}}" id="request_name" formControlName="name" [ngClass]="{'is-invalid': submitted && f.name.errors}"/>
+            <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+              <div *ngIf="f.name.errors.required">{{'이름 / 업체명을 입력하세요.' | translate}}</div>
+            </div>
+					</li>
+					<li class="w_50">
+						<label for="request_email">{{'이메일' | translate}}<strong class="necessary">*</strong></label>
+            <input type="text" class="form-control" placeholder="{{'E-MAIL을 입력하세요.' | translate}}" id="request_email" formControlName="email" [ngClass]="{ 'is-invalid': submitted && f.email.errors }"/>
+            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                <div *ngIf="f.email.errors.required">{{'E-MAIL을 입력하세요.' | translate}}</div>
+                <div *ngIf="f.email.errors.email">{{'E-MAIL을 입력하세요.' | translate}}</div>
+              </div>
+					</li>
+				</ul>
+				<ul>
+					<li>
+						<label for="request_title">{{'제목' | translate}}<strong class="necessary">*</strong></label>
+            <input type="text" class="form-control" placeholder="{{'제목을 입력하세요.' | translate}}"  id="request_title" formControlName="title" [ngClass]="{ 'is-invalid': submitted && f.title.errors }"/>
+            <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                <div *ngIf="f.title.errors.required">{{'제목을 입력하세요.' | translate}}</div>
+              </div>
+					</li>
+					<li>
+						<label for="request_txt">{{'내용' | translate}}<strong class="necessary">*</strong></label>
+            <textarea name="" class="form-control" placeholder="{{'문의 내용을 입력하세요.' | translate}}"  id="request_txt" cols="30" rows="10" formControlName="content" [ngClass]="{ 'is-invalid': submitted && f.content.errors }"></textarea>
+            <div *ngIf="submitted && f.content.errors" class="invalid-feedback">
+                <div *ngIf="f.content.errors.required">{{'문의 내용을 입력하세요.' | translate}}</div>
+            </div>
+					</li>
+				</ul>
+			</div>
+
+			<div class="agree">
+				<input type="checkbox" id="agree" formControlName="check" />
+				<label for="agree"><a data-toggle="modal" data-target="#privacy_modal" (click)="showPrivacyModal()">{{'개인정보제공에 동의합니다.' | translate}}</a></label>
+
+      </div>
+			<div class="btn_area">
+				<input type="submit" value="send" class="basic-btn01 btn-blue-bg" />
+      </div>
+    </div>
+  </form>
+	</div>
+	<!-- //견적의뢰 -->
+
+	<!-- logo -->
+	<div class="partenr_logo">
+		<div class="main_cont">
+			<div class="slides clfx ">
+				<div class="responsive">
+					<div><img src="../assets/img/partner_logo_1.jpg" alt="" /></div>
+					<div><img src="../assets/img/partner_logo_2.jpg" alt="" /></div>
+					<div><img src="../assets/img/partner_logo_3.jpg" alt="" /></div>
+					<div><img src="../assets/img/partner_logo_4.jpg" alt="" /></div>
+					<div><img src="../assets/img/partner_logo_5.jpg" alt="" /></div>
+					<div><img src="../assets/img/partner_logo_6.jpg" alt="" /></div>
+					<div><img src="../assets/img/partner_logo_7.jpg" alt="" /></div>
+					<div><img src="../assets/img/partner_logo_8.jpg" alt="" /></div>
+					<div><img src="../assets/img/partner_logo_9.jpg" alt="" /></div>
+					<div><img src="../assets/img/partner_logo_9.png" alt="" /></div>
+					<div><img src="../assets/img/partner_logo_10.png" alt="" /></div>
+					<!-- <div><img src="../assets/img/partner_logo_1.jpg" alt="" /></div>
+					<div><img src="../assets/img/partner_logo_2.jpg" alt="" /></div>
+					<div><img src="../assets/img/partner_logo_3.jpg" alt="" /></div>
+					<div><img src="../assets/img/partner_logo_4.jpg" alt="" /></div>
+					<div><img src="../assets/img/partner_logo_5.jpg" alt="" /></div>
+					<div><img src="../assets/img/partner_logo_6.jpg" alt="" /></div> -->
+				</div>
+			</div>
+		</div>
+	</div>
+  <!-- //logo -->
+</div>
+
+
+
+<div class="modal fade" id="privacy_modal">
+		<div class="modal-dialog">
+		  <div class="modal-content">
+	  
+			<!-- Modal Header -->
+			<div class="modal-header">
+			  <h4 class="modal-title">개인정보 수집 및 이용 안내</h4>
+			  <button type="button" class="close" (click)="hidePrivacyModal()">&times;</button>
+			</div>
+	  
+			<!-- Modal body -->
+			<div class="modal-body">
+					<div class="privacy_content">
+							<p>1. 목적 : 견적 문의에 따른 연락처 정보 확인</p>
+							<p>2. 항목 : 이름, 연락처, 이메일</p>
+							<p>3. 보유기간 : 전문가 상담 서비스를 위해 검토 완료 후 3개월 간 보관하며, 이후 해당 정보를 지체 없이 파기합니다.</p>
+							<p>위 정보 수집에 대한 동의를 거부할 권리가 있으며, 동의 거부 시에는 상담 접수가 제한될 수 있습니다.</p>
+					</div>
+			</div>
+			<button type="button" id="close-privacy-modal" data-dismiss="modal" style="display: none">Close</button>
+	  
+			<!-- Modal footer -->
+			<!-- <div class="modal-footer">
+			  <button type="button" class="btn btn-default" (click)="hidePrivacyModal()">Close</button>
+	  
+			  <button type="button" id="close-privacy-modal" data-dismiss="modal" style="display: none">Close</button>
+			</div> -->
+		  </div>
+		</div>
+	  </div>

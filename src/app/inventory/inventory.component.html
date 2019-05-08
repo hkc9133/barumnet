@@ -1,0 +1,137 @@
+	<!-- inventory -->
+	<div class="inventory" id="section-2">
+		<div class="main_cont">
+			<h1 class="main_title"><img src="../assets/img/title_2.png" alt=" INVENTORY" /></h1>
+			<p class="top_txt">
+				<!-- 판매를 위해 등록된 많은 업체의 제품과 관련된 최신 정보를 제공합니다. -->
+      </p>
+      <!-- <span class="list_num">제품관련 갯수  10 개</span> -->
+      
+
+
+      <!-- <ng-template [ngIf]="loginStatus">
+          <div class="upload_box">
+                <input class="button" type="file" name="file" ng2FileSelect [uploader]="uploader" (change)="onFileChange($event)"/>
+                <button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll(); loaderService.show();" [disabled]="!uploader.getNotUploadedItems().length" >Upload</button>
+          </div>
+      </ng-template> -->
+      <div class="search_box container">
+
+          <ng-template [ngIf]="loginStatus">
+              <div class="input-group mb-3 row upload_box">
+                  <div class="upload_box">
+                        <input class="button" type="file" name="file" ng2FileSelect [uploader]="uploader" (change)="onFileChange($event)"/>
+                        <button type="button" class="btn btn-success btn-sm" (click)="uploader.uploadAll(); loaderService.show();" [disabled]="!uploader.getNotUploadedItems().length" >Upload</button>
+                  </div>
+              </div>
+          </ng-template>
+
+        <div class="input-group mb-3 row">
+            <select [(ngModel)]='searchItem' class='form-control col-sm-2'>
+                <option value="1" selected>{{'제조사명' | translate}}</option>
+                <option value="2">{{'파트넘버/모델명/제품명' | translate}}</option>
+                <option value="3">{{'제품설명' | translate}}</option>
+              </select>
+            <input type="text" class="form-control col-sm-10" id="searchString" (keydown)="onKeydown($event)" [(ngModel)]='searchString' aria-describedby="button-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-secondary" id="searchBtn" (click)="setPage(1)" type="button" id="button-addon2">{{'검색' | translate}}</button>
+            </div>
+          </div>
+      </div>
+			<table>
+				<colgroup>
+					<col style="width:6.22%;" />
+					<col style="width:7.73%;" />
+					<col style="width:15.15%;" />
+					<col />
+					<col style="width:7.17%;" />
+					<col style="width:5.98%;" />
+					<col style="width:12.36%;" />
+				</colgroup>
+				<thead>
+					<tr>
+						<th scope="col">No.</th>
+            <th scope="col">{{'제조사명' | translate}}</th>
+						<th scope="col">{{'파트넘버/모델명/제품명' | translate}}</th>
+						<th scope="col">{{'제품설명' | translate}}</th>
+						<th scope="col">{{'수량' | translate}}</th>
+						<th scope="col">{{'상태' | translate}}</th>
+						<th scope="col">{{'등록일시' | translate}}</th>
+					</tr>
+				</thead>
+				<tbody>
+          <tr *ngFor="let item of pagedItems">
+            <td>
+              {{item.idx}}
+            </td>
+            <td>
+              {{item.mfg_company}}
+            </td>
+            <td>
+              {{item.product_name}}
+            </td>
+            <td>
+                {{item.product_info}}
+              </td>
+            <td>
+              {{item.product_quantity}}
+            </td>
+            <td>
+                {{item.product_status | translate}}
+            </td>
+            <td>
+              {{item.reg_date | date: 'yyyy-MM-dd'}}
+            </td>
+          </tr>
+
+				</tbody>
+      </table>
+      <div class="pagination_box">
+      <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+          <li [ngClass]="{disabled:pager.currentPage === 1}">
+              <a class="btn btn-outline-light" (click)="setPage(1)">First</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === 1}">
+              <a class="btn btn-outline-light" (click)="setPage(pager.currentPage - 1)">Previous</a>
+          </li>
+          <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+              <a class="btn" (click)="setPage(page)">{{page}}</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+              <a class="btn btn-outline-light" (click)="setPage(pager.currentPage + 1)">Next</a>
+          </li>
+          <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+              <a class="btn btn-outline-light" (click)="setPage(pager.totalPages)">Last</a>
+          </li>
+      </ul>
+      </div>
+    </div>
+  </div>
+  
+  <!-- <div>
+    <div class="container">
+        <div class="text-center">
+            <h1>Angular 2 - Pagination Example with logic like Google</h1>
+
+            <div *ngFor="let item of pagedItems">{{item.product_name}}</div>
+
+            <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                <li [ngClass]="{disabled:pager.currentPage === 1}">
+                    <a (click)="setPage(1)">First</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === 1}">
+                    <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+                </li>
+                <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                    <a (click)="setPage(page)">{{page}}</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                    <a (click)="setPage(pager.currentPage + 1)">Next</a>
+                </li>
+                <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                    <a (click)="setPage(pager.totalPages)">Last</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div> -->
